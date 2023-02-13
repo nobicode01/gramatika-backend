@@ -11,12 +11,12 @@
                 @csrf
                 <div class="form-group">
                     <label for="name" class="form-control-label">Nama Barang</label>
-                    <select name="product_id" class="form-control  @error('product_id') is-invalid @enderror">
+                    <select name="products_id" class="form-control  @error('products_id') is-invalid @enderror">
                         @foreach ($products as $product)
                             <option value="{{ $product->id }}">{{ $product->name }}</option>
                         @endforeach
                     </select>
-                    @error('product_id') <div class="text-muted">{{ $message }}</div> @enderror
+                    @error('products_id') <div class="text-muted">{{ $message }}</div> @enderror
                 </div>
                 <div class="form-group">
                     <label for="photo" class="form-control-label">Foto Barang</label>

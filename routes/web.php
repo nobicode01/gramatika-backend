@@ -22,6 +22,8 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 Auth::routes();
 
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('products/{id}/gallery', [ProductController::class, 'gallery'])->name('products.gallery');
 
 Route::resource('products', ProductController::class);

@@ -115,7 +115,7 @@ class ProductController extends Controller
         $item = Product::findOrFail($id);
         $item->delete();
 
-        ProductGallery::where('product_id', $id)->delete();
+        ProductGallery::where('products_id', $id)->delete();
 
         return redirect()->route('products.index')->with('status', 'Produk berhasil dihapus!');
     }
@@ -123,7 +123,7 @@ class ProductController extends Controller
     public function gallery(Request $request, $id){
         $product = Product::findOrFail($id);
         $items = ProductGallery::with('product')
-            ->where('product_id', $id)
+            ->where('products_id', $id)
             ->get();
 
             return view('pages.products.gallery')->with([

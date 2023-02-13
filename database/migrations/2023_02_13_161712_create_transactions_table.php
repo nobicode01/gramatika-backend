@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid'); 
+            $table->string('uuid');
             $table->string('name');
             $table->string('email');
             $table->string('number');
             $table->string('address');
             $table->integer('transaction_total');
             $table->string('transaction_status');
-
             $table->softDeletes();
             $table->timestamps();
         });
